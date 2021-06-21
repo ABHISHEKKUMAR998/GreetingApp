@@ -4,5 +4,8 @@ import com.GreetingApp.Model.Greeting;
 import com.GreetingApp.Model.User;
 
 public interface IGreetingService {
-	Greeting addGreeting(User user);
+	
+	String getMessage();
+
+	String getMessage(User user);
 }
