@@ -5,4 +5,7 @@ import com.GreetingApp.Model.Greeting;
 
 public interface IGreetingsRepository extends JpaRepository<Greeting, Long> {
 
+	Greeting save(Greeting greeting);
+	
+
 }

@@ -3,6 +3,7 @@ package com.GreetingApp.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.GreetingApp.Repository.IGreetingsRepository;
+import com.GreetingConfigure.GreetingConfigure;
 import com.GreetingApp.Model.Greeting;
 import com.GreetingApp.Model.User;
 
@@ -36,6 +37,11 @@ import com.GreetingApp.Model.User;
 			Greeting greeting = new Greeting(greetingconfig);
 			greeting = greetingrepository.save(greeting);
 			return greeting;
+		}
+		@Override
+	
+		public Greeting getGreeting(Long id) {
+			return greetingrepository.find(id).orElseGet(null);
 		}
 		
 }
