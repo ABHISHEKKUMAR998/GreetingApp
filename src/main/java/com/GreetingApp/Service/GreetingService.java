@@ -1,7 +1,8 @@
 package com.GreetingApp.Service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import com.GreetingApp.Repository.IGreetingsRepository;
 import com.GreetingApp.Model.Greeting;
 import com.GreetingApp.Model.User;
 
@@ -27,5 +28,14 @@ import com.GreetingApp.Model.User;
 			}
 
 	}
+		@Autowired
+		IGreetingsRepository greetingrepository;
+
+		@Override
+		public Greeting saveGreeting(GreetingConfigure greetingconfig) {
+			Greeting greeting = new Greeting(greetingconfig);
+			greeting = greetingrepository.save(greeting);
+			return greeting;
+		}
 		
 }

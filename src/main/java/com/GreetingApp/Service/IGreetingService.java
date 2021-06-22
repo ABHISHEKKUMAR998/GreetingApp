@@ -8,4 +8,5 @@ public interface IGreetingService {
 	String getMessage();
 
 	String getMessage(User user);
+	Greeting saveGreeting(GreetingConfigure greetingconfig);
 }
