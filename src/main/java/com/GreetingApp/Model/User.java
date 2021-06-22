@@ -1,14 +1,10 @@
 package com.GreetingApp.Model;
 
 public class User {
-	String firstName;
-	String lastName;
+	private String firstName;
+	private String lastName;
 
-	public User(String firstName, String lastName) {
-		super();
-		this.firstName = firstName;
-		this.lastName = lastName;
-	}
+	
 
 	public String getFirstName() {
 		return firstName;
@@ -25,6 +21,11 @@ public class User {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-
+	@Override
+	public String toString() {
+		String name = (this.firstName != null ? this.firstName : "") + " "
+				+ (this.lastName != null ? this.lastName : "");
+		return name;
+	}
 	
 }

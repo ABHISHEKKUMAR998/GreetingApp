@@ -1,15 +1,19 @@
 package com.GreetingApp.Service;
 
+import java.util.List;
+
 import com.GreetingApp.Model.Greeting;
 import com.GreetingApp.Model.User;
 import com.GreetingConfigure.GreetingConfigure;
 
+
 public interface IGreetingService {
 	
-	String getMessage();
+	Greeting addGreeting(User user);
+	Greeting getGreetingById(long id);
+	List<Greeting> getAllGreetings();
 
-	String getMessage(User user);
-	Greeting saveGreeting(GreetingConfigure greetingconfig);
+	String deleteGreeting(long id);
 
-	Greeting getGreeting(Long id);
+	Greeting updateGreeting(long id, String message);
 }

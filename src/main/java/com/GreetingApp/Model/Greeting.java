@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import com.GreetingConfigure.GreetingConfigure;
 
 @Entity
+@Table(name = "GREETINGS")
 public class Greeting {
 
 	@Id
@@ -18,10 +19,15 @@ public class Greeting {
 	private String msg;
 	
 	public Greeting() {
+		id = 0;
+		msg = "";
 	}
 
-	public Greeting(GreetingConfigure greetingconfig) {
-		this.msg = greetingconfig.msg;
+	
+
+	public Greeting(long id, String message) {
+		this.id = id;
+		this.msg = message;
 	}
 
 	public long getId() {
